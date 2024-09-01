@@ -51,4 +51,34 @@ console.log(multipleTypeArray);
 let user: [number, string];
 user = [101, "anis"];
 console.log(user);
+
+// typescript enum - store constants duplicate value is not allowed here
+// enum types: numeric, string and heterogenous
+
+//numeric enum
+enum RequestType {
+  readData,
+  deleteData,
+  saveData,
+}
+
+console.log(RequestType);
+
+// string enum
+enum RequestType2 {
+  readData = "Read_Data",
+  deleteData = "Delete_Data",
+}
+
+console.log(RequestType2);
+
+//heterogenous enum
+
+enum RequestType3 {
+  readData = "Read_Data",
+  deleteData = "Delete_Data",
+  id = 500,
+}
+
+console.log(RequestType3);
 //index.ts -> tsc.index.ts --watch -> nodemon index.js
