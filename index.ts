@@ -81,4 +81,26 @@ enum RequestType3 {
 }
 
 console.log(RequestType3);
+
+//any and unknown type
+let userName10: any;
+userName10 = "anis";
+userName10 = 121;
+userName10 = true;
+userName10 = [10, 20];
+
+console.log(userName10);
+
+//unknown type is safer than any type. Because you have to check type before perform any operation
+
+let someValue: unknown = "Hello World";
+someValue = 42; // No error, but...
+
+// TypeScript will not allow you to use this value without type checking
+// someValue.foo(); // Error: Object is of type 'unknown'.
+
+if (typeof someValue === "string") {
+  console.log(someValue.toUpperCase()); // Works, because we checked the type
+}
+
 //index.ts -> tsc.index.ts --watch -> nodemon index.js
