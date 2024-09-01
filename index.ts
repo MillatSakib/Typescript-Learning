@@ -103,4 +103,21 @@ if (typeof someValue === "string") {
   console.log(someValue.toUpperCase()); // Works, because we checked the type
 }
 
+//object type in typescript
+
+let user1: { userName: string; userId: number };
+user1 = {
+  userName: "Sakib",
+  userId: 222902036,
+};
+
+let user2: object;
+user2 = {};
+
+let users: object[];
+users = [{ name: "anis" }, { name: "lucky" }];
+
+users.push(user1);
+users.push(user2);
+console.log(users);
 //index.ts -> tsc.index.ts --watch -> nodemon index.js
