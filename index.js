@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //basic syntax of typescript
 var userName = "anisul islam";
 console.log(userName);
@@ -119,3 +134,25 @@ var User = /** @class */ (function () {
 }());
 var user10 = new User("Md. Sohan Millat Sakib", 22);
 user10.display();
+//inheritence
+var User2 = /** @class */ (function () {
+    function User2(userName, age) {
+        this.userName = userName;
+        this.age = age;
+    }
+    User2.prototype.display = function () {
+        console.log("Thank you ".concat(this.userName, "! You can successfully run the programm..."));
+    };
+    return User2;
+}());
+var Students = /** @class */ (function (_super) {
+    __extends(Students, _super);
+    function Students(userName, age, studentId) {
+        var _this = _super.call(this, userName, age) || this;
+        _this.studentId = studentId;
+        return _this;
+    }
+    return Students;
+}(User2));
+var studentUser = new Students("Mansina", 22, 123456);
+studentUser.display();

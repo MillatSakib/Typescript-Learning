@@ -158,3 +158,32 @@ class User {
 
 let user10 = new User("Md. Sohan Millat Sakib", 22);
 user10.display();
+
+//inheritence
+
+class User2 {
+  userName: string;
+  age: number;
+
+  constructor(userName: string, age: number) {
+    this.userName = userName;
+    this.age = age;
+  }
+  display(): void {
+    console.log(
+      `Thank you ${this.userName}! You can successfully run the programm...`
+    );
+  }
+}
+
+class Students extends User2 {
+  studentId: number;
+  constructor(userName: string, age: number, studentId: number) {
+    super(userName, age);
+    this.studentId = studentId;
+  }
+}
+
+const studentUser = new Students("Mansina", 22, 123456);
+
+studentUser.display();
