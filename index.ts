@@ -120,4 +120,41 @@ users = [{ name: "anis" }, { name: "lucky" }];
 users.push(user1);
 users.push(user2);
 console.log(users);
+
+//custom type in typescript
+let userX: { userName: string; userId: number };
+userX = {
+  userName: "Sakib",
+  userId: 222902036,
+};
+
+let userY: object;
+userY = {};
+
+let userses: object[];
+userses = [{ name: "anis" }, { name: "lucky" }];
+
+users.push(userX);
+users.push(userY);
+console.log(users);
+
 //index.ts -> tsc.index.ts --watch -> nodemon index.js
+
+// class and object
+
+class User {
+  userName: string;
+  age: number;
+
+  constructor(userName: string, age: number) {
+    this.userName = userName;
+    this.age = age;
+  }
+
+  display(): void {
+    console.log("The user name is", this.userName);
+  }
+}
+
+let user10 = new User("Md. Sohan Millat Sakib", 22);
+user10.display();
